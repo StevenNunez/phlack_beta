@@ -42,6 +42,7 @@ defmodule PhlackBeta.Router do
  scope "/", PhlackBeta do
     pipe_through :protected
     # Add protected routes below
+    resources "/rooms", RoomController
   end
 
   # Other scopes may use custom stacks.

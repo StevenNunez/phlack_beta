@@ -5,6 +5,8 @@ defmodule PhlackBeta.User do
   schema "users" do
     field :name, :string
     field :email, :string
+    has_many :room_memberships, PhlackBeta.RoomMembership
+    has_many :rooms, through: [:room_memberships, :room]
     coherence_schema
 
     timestamps
