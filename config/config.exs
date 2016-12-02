@@ -1,0 +1,27 @@
+# This file is responsible for configuring your application
+# and its dependencies with the aid of the Mix.Config module.
+#
+# This configuration file is loaded before any dependency and
+# is restricted to this project.
+use Mix.Config
+
+# General application configuration
+config :phlack_beta,
+  ecto_repos: [PhlackBeta.Repo]
+
+# Configures the endpoint
+config :phlack_beta, PhlackBeta.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "987OqOQ3WUl4jqiLj9S4KXjU23qGY8Rji1RF3f3BfmL8PgIUwjDQKVyUlc9v41zN",
+  render_errors: [view: PhlackBeta.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: PhlackBeta.PubSub,
+           adapter: Phoenix.PubSub.PG2]
+
+# Configures Elixir's Logger
+config :logger, :console,
+  format: "$time $metadata[$level] $message\n",
+  metadata: [:request_id]
+
+# Import environment specific config. This must remain at the bottom
+# of this file so it overrides the configuration defined above.
+import_config "#{Mix.env}.exs"
