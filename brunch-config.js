@@ -64,6 +64,8 @@ exports.config = {
   },
 
   npm: {
-    enabled: true
+    enabled: true,
+    styles: {['materialize-css']: ['dist/css/materialize.css']}
+
   }
 };
